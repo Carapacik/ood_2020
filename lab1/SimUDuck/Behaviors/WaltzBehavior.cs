@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace SimUDuck.DanceBehavior
+namespace SimUDuck.Behaviors
 {
-    class WaltzBehavior : IDanceBehavior
+    internal class WaltzBehavior : IDanceBehavior
     {
         public void Dance()
         {

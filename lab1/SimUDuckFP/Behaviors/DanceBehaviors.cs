@@ -2,7 +2,7 @@
 
 namespace SimUDuckFP.Behaviors
 {
-    class DanceBehavior
+    internal static class DanceBehavior
     {
         public static void MinuetBehavior()
         {
@@ -14,6 +14,8 @@ namespace SimUDuckFP.Behaviors
             Console.WriteLine("I'm dancing waltz!");
         }
 
-        public static void NoDanceBehavior() { }
+        public static void NoDanceBehavior()
+        {
+        }
     }
 }

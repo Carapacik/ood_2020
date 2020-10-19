@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimUDuck.QuackBehaviors
+namespace SimUDuck.Behaviors
 {
     public class QuackBehavior : IQuackBehavior
     {

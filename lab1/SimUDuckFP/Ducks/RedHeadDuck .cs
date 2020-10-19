@@ -3,9 +3,11 @@ using SimUDuckFP.Behaviors;
 
 namespace SimUDuckFP.Ducks
 {
-    class RedheadDuck : Duck
+    internal class RedheadDuck : Duck
     {
-        public RedheadDuck() : base(FlyBehavior.FlyWithWings(), QuackBehavior.Quack, DanceBehavior.MinuetBehavior) { }
+        public RedheadDuck() : base(FlyBehavior.FlyWithWings(), QuackBehavior.Quack, DanceBehavior.MinuetBehavior)
+        {
+        }
 
         public override void Display()
         {

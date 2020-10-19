@@ -1,13 +1,13 @@
 ﻿using System;
-using SimUDuck.DanceBehavior;
-using SimUDuck.FlyBehavior;
-using SimUDuck.QuackBehaviors;
+using SimUDuck.Behaviors;
 
 namespace SimUDuck.Ducks
 {
-    class MallardDuck : Duck
+    internal class MallardDuck : Duck
     {
-        public MallardDuck() : base(new FlyWithWings(), new QuackBehavior(), new WaltzBehavior()) { }
+        public MallardDuck() : base(new FlyWithWings(), new QuackBehavior(), new WaltzBehavior())
+        {
+        }
 
         public override void Display()
         {

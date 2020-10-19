@@ -1,6 +1,6 @@
 ﻿using System;
+using SimUDuck.Behaviors;
 using SimUDuck.Ducks;
-using SimUDuck.FlyBehavior;
 
 namespace SimUDuck
 {
@@ -20,17 +20,17 @@ namespace SimUDuck
             Console.WriteLine();
         }
 
-        private static void Main(string[] args)
+        private static void Main()
         {
-            MallardDuck mallardDuck = new MallardDuck();
+            var mallardDuck = new MallardDuck();
             PlayWithDuck(mallardDuck);
-            RedheadDuck readheadDuck = new RedheadDuck();
-            PlayWithDuck(readheadDuck);
-            RubberDuck rubberDuck = new RubberDuck();
+            var redheadDuck = new RedheadDuck();
+            PlayWithDuck(redheadDuck);
+            var rubberDuck = new RubberDuck();
             PlayWithDuck(rubberDuck);
-            DecoyDuck decoyDuck = new DecoyDuck();
+            var decoyDuck = new DecoyDuck();
             PlayWithDuck(decoyDuck);
-            ModelDuck modelDuck = new ModelDuck();
+            var modelDuck = new ModelDuck();
             PlayWithDuck(modelDuck);
 
             modelDuck.SetFlyBehavior(new FlyWithWings());

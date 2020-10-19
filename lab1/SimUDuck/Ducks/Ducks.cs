@@ -1,11 +1,9 @@
 ﻿using System;
-using SimUDuck.DanceBehavior;
-using SimUDuck.FlyBehavior;
-using SimUDuck.QuackBehaviors;
+using SimUDuck.Behaviors;
 
 namespace SimUDuck.Ducks
 {
-    abstract class Duck
+    internal abstract class Duck
     {
         private readonly IDanceBehavior _danceBehavior;
         private IFlyBehavior _flyBehavior;
@@ -43,6 +41,8 @@ namespace SimUDuck.Ducks
             _flyBehavior = flyBehavior;
         }
 
-        public virtual void Display() { }
+        public virtual void Display()
+        {
+        }
     }
 }

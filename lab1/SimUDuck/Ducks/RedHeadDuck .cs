@@ -1,13 +1,13 @@
 ﻿using System;
-using SimUDuck.DanceBehavior;
-using SimUDuck.FlyBehavior;
-using SimUDuck.QuackBehaviors;
+using SimUDuck.Behaviors;
 
 namespace SimUDuck.Ducks
 {
-    class RedheadDuck : Duck
+    internal class RedheadDuck : Duck
     {
-        public RedheadDuck() : base(new FlyWithWings(), new QuackBehavior(), new MinuetBehavior()) { }
+        public RedheadDuck() : base(new FlyWithWings(), new QuackBehavior(), new MinuetBehavior())
+        {
+        }
 
         public override void Display()
         {

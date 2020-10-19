@@ -1,15 +1,14 @@
 ﻿using System;
-using SimUDuckFP.Behaviors;
 
 namespace SimUDuckFP.Ducks
 {
-    abstract class Duck
+    internal abstract class Duck
     {
-        Action _danceBehavior;
-        Action _flyBehavior;
-        Action _quackBehavior;
+        private readonly Action _danceBehavior;
+        private Action _flyBehavior;
+        private readonly Action _quackBehavior;
 
-        public Duck(Action flyBehavior, Action quackBehavior, Action danceBehavior)
+        protected Duck(Action flyBehavior, Action quackBehavior, Action danceBehavior)
         {
             _danceBehavior = danceBehavior;
             _flyBehavior = flyBehavior;
@@ -41,6 +40,8 @@ namespace SimUDuckFP.Ducks
             _flyBehavior = flyBehavior;
         }
 
-        public virtual void Display() { }
+        public virtual void Display()
+        {
+        }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
 
-namespace SimUDuck.FlyBehavior
+namespace SimUDuck.Behaviors
 {
-    class FlyWithWings : IFlyBehavior
+    internal class FlyWithWings : IFlyBehavior
     {
-        private int _flightCounter = 0;
+        private int _flightCounter;
+
         public void Fly()
         {
             Console.WriteLine($"I'm flying with wings! It's a flight number {++_flightCounter}!");

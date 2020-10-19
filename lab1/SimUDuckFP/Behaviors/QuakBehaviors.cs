@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SimUDuckFP.Behaviors
 {
-    public class QuackBehavior
+    public static class QuackBehavior
     {
         public static void Quack()
         {
@@ -13,9 +11,11 @@ namespace SimUDuckFP.Behaviors
 
         public static void Squeak()
         {
-            Console.WriteLine("Squeek!");
+            Console.WriteLine("Squeak!");
         }
 
-        public static void NoQuackBehavior() { }
+        public static void NoQuackBehavior()
+        {
+        }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace SimUDuck.QuackBehaviors
+namespace SimUDuck.Behaviors
 {
     public class SqueakBehavior : IQuackBehavior
     {
         public void Quack()
         {
-            Console.WriteLine("Squeek!!!");
+            Console.WriteLine("Squeak!!!");
         }
     }
 }
