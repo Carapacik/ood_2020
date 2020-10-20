@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WeatherStationDuo
+﻿namespace WeatherStationDuo
 {
     internal static class Program
     {

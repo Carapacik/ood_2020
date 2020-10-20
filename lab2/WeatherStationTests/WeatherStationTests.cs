@@ -20,7 +20,7 @@ namespace WeatherStationTests
             Console.Write($"priority - {_priority};");
         }
     }
-    
+
     [TestClass]
     public class PriorityTests
     {
@@ -47,7 +47,7 @@ namespace WeatherStationTests
             Assert.AreEqual(expectedResult, output.ToString());
         }
     }
-    
+
     public class UpdateTest : WeatherStation.IObserver<WeatherInfo>
     {
         private readonly WeatherStation.IObservable<WeatherInfo> _observable;
@@ -62,20 +62,21 @@ namespace WeatherStationTests
             _observable.RemoveObserver(this);
         }
     }
-    
+
     [TestClass]
     public class RemoveObserverFromUpdateTest
     {
         [TestMethod]
         public void RemoveObserverFromUpdate_DoNotException()
         {
-            WeatherData wd = new WeatherData();
-            UpdateTest updateTest = new UpdateTest(wd);
+            var wd = new WeatherData();
+            var updTest1 = new UpdateTest(wd);
+            var updTest2 = new UpdateTest(wd);
 
-            wd.RegisterObserver(updateTest, 1);
-            wd.SetMeasurements(3, 0.7, 760);
+            wd.RegisterObserver(updTest1, 1);
+            wd.RegisterObserver(updTest2, 2);
+
+            wd.SetMeasurements(3, 0.6, 760);
         }
     }
-    
- 
 }

@@ -18,17 +18,11 @@ namespace WeatherStationDuoTests
 
         public void Update(WeatherInfo data, WeatherStationDuo.IObservable<WeatherInfo> observable)
         {
-            if (_weatherDataIn == observable)
-            {
-                Console.Write("Inside;");
-            }
-            if (_weatherDataOut == observable)
-            {
-                Console.Write("Outside;");
-            }
+            if (_weatherDataIn == observable) Console.Write("IN,");
+            if (_weatherDataOut == observable) Console.Write("OUT,");
         }
     }
-    
+
     [TestClass]
     public class WeatherStationDuoTest
     {
@@ -51,7 +45,7 @@ namespace WeatherStationDuoTests
             wdOut.SetMeasurements(4, 0.8, 761);
 
             var result = sw.ToString();
-            const string expectedResult = "Inside;Outside;";
+            const string expectedResult = "IN,OUT,";
 
             Assert.AreEqual(expectedResult, result);
         }

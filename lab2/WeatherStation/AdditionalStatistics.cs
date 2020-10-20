@@ -9,14 +9,8 @@
 
         public void UpdateData(double value)
         {
-            if (_min > value)
-            {
-                _min = value;
-            }
-            if (_max < value)
-            {
-                _max = value;
-            }
+            if (_min > value) _min = value;
+            if (_max < value) _max = value;
             _acc += value;
             _countAcc++;
         }

@@ -12,21 +12,18 @@ namespace WeatherStationPro
             _observers.Add((observer, priority));
             _observers = _observers.OrderByDescending(o => o.Item2).ToList();
         }
-        
+
         public void RemoveObserver(IObserver<T> observer)
         {
             _observers.RemoveAll(o => o.Item1 == observer);
         }
-        
+
         public void NotifyObservers()
         {
             T data = GetChangedData();
-            foreach (var observer in _observers.ToList())
-            {
-                observer.Item1.Update(data);
-            }
+            foreach (var observer in _observers.ToList()) observer.Item1.Update(data);
         }
-        
+
         protected abstract T GetChangedData();
     }
 }
