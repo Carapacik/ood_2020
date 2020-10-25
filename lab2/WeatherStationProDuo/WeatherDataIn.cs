@@ -1,6 +1,6 @@
-﻿namespace WeatherStationDuo
+namespace WeatherStationProDuo
 {
-    public class WeatherData : Observable<WeatherInfo>
+    public class WeatherDataIn : Observable<WeatherInfo>
     {
         private double _humidity;
         private double _pressure;
@@ -26,6 +26,7 @@
             info.Temperature = _temperature;
             info.Humidity = _humidity;
             info.Pressure = _pressure;
+            info.WindInfo = null;
             return info;
         }
     }

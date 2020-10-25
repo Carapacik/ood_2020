@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace WeatherStationDuo
+namespace WeatherStationProDuo
 {
     public class StatsDisplay : IObserver<WeatherInfo>
     {
-        private readonly WeatherData _weatherDataIn;
-        private readonly WeatherData _weatherDataOut;
+        private readonly WeatherDataIn _weatherDataIn;
+        private readonly WeatherDataOut _weatherDataOut;
         private readonly WeatherStats _weatherStatisticsIn = new WeatherStats();
         private readonly WeatherStats _weatherStatisticsOut = new WeatherStats();
 
-        public StatsDisplay(WeatherData weatherDataIn, WeatherData weatherDataOut)
+        public StatsDisplay(WeatherDataIn weatherDataIn, WeatherDataOut weatherDataOut)
         {
             _weatherDataIn = weatherDataIn;
             _weatherDataOut = weatherDataOut;

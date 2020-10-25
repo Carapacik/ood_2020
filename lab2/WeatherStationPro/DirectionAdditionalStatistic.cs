@@ -2,11 +2,11 @@
 
 namespace WeatherStationPro
 {
-    public class WindAdditionalStatistic
+    public class DirectionAdditionalStatistic
     {
-        private double _sinSum = 0;
-        private double _cosSum = 0;
-        private uint _countAcc = 0;
+        private double _cosSum;
+        private uint _countAcc;
+        private double _sinSum;
 
         private static double ConvertDegreesToRadians(double degrees)
         {

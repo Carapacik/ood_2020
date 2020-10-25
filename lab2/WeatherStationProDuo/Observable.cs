@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace WeatherStation
+namespace WeatherStationProDuo
 {
     public abstract class Observable<T> : IObservable<T>
     {
@@ -21,7 +21,7 @@ namespace WeatherStation
         public void NotifyObservers()
         {
             var data = GetChangedData();
-            foreach (var observer in _observers.ToList()) observer.Item1.Update(data);
+            foreach (var observer in _observers.ToList()) observer.Item1.Update(data, this);
         }
 
         protected abstract T GetChangedData();

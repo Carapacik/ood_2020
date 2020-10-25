@@ -2,9 +2,9 @@
 {
     public class WeatherData : Observable<WeatherInfo>
     {
-        private double _temperature;
         private double _humidity;
         private double _pressure;
+        private double _temperature;
         private WindInfo _wind;
 
         private void MeasurementsChanged()

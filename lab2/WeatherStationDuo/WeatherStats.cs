@@ -4,11 +4,11 @@ namespace WeatherStationDuo
 {
     public class WeatherStats
     {
-        private readonly AdditionalStatistics _temperatureData = new AdditionalStatistics();
-        private readonly AdditionalStatistics _humidityData = new AdditionalStatistics();
-        private readonly AdditionalStatistics _pressureData = new AdditionalStatistics();
+        private readonly AdditionalStatistic _humidityData = new AdditionalStatistic();
+        private readonly AdditionalStatistic _pressureData = new AdditionalStatistic();
+        private readonly AdditionalStatistic _temperatureData = new AdditionalStatistic();
 
-        private static string GetAdditionalStatistics(AdditionalStatistics data)
+        private static string GetAdditionalStatistics(AdditionalStatistic data)
         {
             return $"\n MAX {data.GetMaxValue()}\n MIN {data.GetMinValue()}\n AVG {data.GetAverageValue()}";
         }

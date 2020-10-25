@@ -20,7 +20,7 @@ namespace WeatherStationPro
 
         public void NotifyObservers()
         {
-            T data = GetChangedData();
+            var data = GetChangedData();
             foreach (var observer in _observers.ToList()) observer.Item1.Update(data);
         }
 

@@ -1,11 +1,11 @@
-﻿namespace WeatherStation
+﻿namespace WeatherStationDuo
 {
-    public class AdditionalStatistics
+    public class AdditionalStatistic
     {
-        private double _min = double.PositiveInfinity;
+        private double _acc;
+        private uint _countAcc;
         private double _max = double.NegativeInfinity;
-        private double _acc = 0;
-        private uint _countAcc = 0;
+        private double _min = double.PositiveInfinity;
 
         public void UpdateData(double value)
         {
