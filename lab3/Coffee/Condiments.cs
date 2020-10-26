@@ -4,6 +4,11 @@
     {
         private readonly IBeverage _beverage;
 
+        protected CondimentDecorator(IBeverage beverage)
+        {
+            _beverage = beverage;
+        }
+
         public string GetDescription()
         {
             return _beverage.GetDescription() + ", " + GetCondimentDescription();
@@ -12,11 +17,6 @@
         public double GetCost()
         {
             return _beverage.GetCost() + GetCondimentCost();
-        }
-
-        protected CondimentDecorator(IBeverage beverage)
-        {
-            _beverage = beverage;
         }
 
         protected abstract double GetCondimentCost();
@@ -52,7 +52,7 @@
 
         protected override double GetCondimentCost()
         {
-            return 10 * _quantity;
+            return 10.0 * _quantity;
         }
 
         protected override string GetCondimentDescription()
@@ -69,8 +69,8 @@
 
     public class IceCubes : CondimentDecorator
     {
-        private readonly uint _quantity;
         private readonly IceCubeType _cubeType;
+        private readonly uint _quantity;
 
         public IceCubes(IBeverage beverage, uint quantity, IceCubeType cubeType) : base(beverage)
         {
@@ -126,7 +126,7 @@
 
         protected override double GetCondimentCost()
         {
-            return 2 * _mass;
+            return 2.0 * _mass;
         }
 
         protected override string GetCondimentDescription()
@@ -186,7 +186,7 @@
 
         protected override double GetCondimentCost()
         {
-            return 10 * _quantity;
+            return 10.0 * _quantity;
         }
 
         protected override string GetCondimentDescription()

@@ -10,7 +10,7 @@ namespace Coffee
             var choice = Convert.ToInt32(Console.ReadLine());
             if (CheckChoice(choice)) throw new Exception("Argument is out of range!");
 
-            return new Cappuccino((CoffeeSize)choice);
+            return new Cappuccino((CoffeeSize) choice);
         }
 
         private static IBeverage MakeMilkShake()
@@ -28,7 +28,7 @@ namespace Coffee
             var choice = Convert.ToInt32(Console.ReadLine());
             if (CheckChoice(choice)) throw new Exception("Argument is out of range!");
 
-            return new Latte((CoffeeSize)choice);
+            return new Latte((CoffeeSize) choice);
         }
 
         private static IBeverage MakeTea()
@@ -71,7 +71,7 @@ namespace Coffee
             Console.WriteLine("Enter the type of ice\n0 - Dry, 1 - Water");
             var choice = Convert.ToInt32(Console.ReadLine());
             if (CheckChoice(choice)) throw new Exception("Argument is out of range!");
-            
+
             var iceType = (IceCubeType) choice;
             return new IceCubes(beverage, iceCubes, iceType);
         }

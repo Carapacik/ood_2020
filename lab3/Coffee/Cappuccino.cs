@@ -1,6 +1,5 @@
 ﻿namespace Coffee
 {
-
     public class Cappuccino : Coffee
     {
         private readonly CoffeeSize _cappuccinoSize;
