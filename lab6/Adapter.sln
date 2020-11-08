@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{4537CC40-1778-4147-A204-9B9687AFACD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterTests", "AdapterTests\AdapterTests.csproj", "{0DEEFCEB-B39B-4CF4-9F9E-B5004C55D736}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4537CC40-1778-4147-A204-9B9687AFACD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4537CC40-1778-4147-A204-9B9687AFACD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4537CC40-1778-4147-A204-9B9687AFACD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4537CC40-1778-4147-A204-9B9687AFACD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DEEFCEB-B39B-4CF4-9F9E-B5004C55D736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DEEFCEB-B39B-4CF4-9F9E-B5004C55D736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DEEFCEB-B39B-4CF4-9F9E-B5004C55D736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DEEFCEB-B39B-4CF4-9F9E-B5004C55D736}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
