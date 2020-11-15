@@ -7,7 +7,7 @@ namespace Factory.Shapes
             Color = color;
         }
 
-        protected Color Color { get; }
+        public Color Color { get; }
 
         public abstract void Draw(ICanvas canvas);
     }

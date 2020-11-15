@@ -9,9 +9,9 @@ namespace Factory.Shapes
             RadiusY = radiusY;
         }
 
-        private Point Center { get; }
-        private double RadiusX { get; }
-        private double RadiusY { get; }
+        public Point Center { get; }
+        public double RadiusX { get; }
+        public double RadiusY { get; }
 
         public override void Draw(ICanvas canvas)
         {

@@ -9,9 +9,9 @@ namespace Factory.Shapes
             Vertex3 = vertex3;
         }
 
-        private Point Vertex1 { get; }
-        private Point Vertex2 { get; }
-        private Point Vertex3 { get; }
+        public Point Vertex1 { get; }
+        public Point Vertex2 { get; }
+        public Point Vertex3 { get; }
 
         public override void Draw(ICanvas canvas)
         {

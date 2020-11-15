@@ -1,5 +1,3 @@
-using Factory.Shapes;
-
 namespace Factory
 {
     public interface ICanvas

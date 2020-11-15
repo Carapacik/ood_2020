@@ -15,9 +15,9 @@ namespace Factory.Shapes
             Radius = radius;
         }
 
-        private int VertexCount { get; }
-        private Point Center { get; }
-        private double Radius { get; }
+        public int VertexCount { get; }
+        public Point Center { get; }
+        public double Radius { get; }
 
         private List<Point> Vertices
         {

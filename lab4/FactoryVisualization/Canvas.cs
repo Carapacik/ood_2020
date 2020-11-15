@@ -3,7 +3,6 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using Factory;
 using Color = Factory.Color;
-using Ellipse = System.Windows.Shapes.Ellipse;
 
 namespace FactoryVisualization
 {

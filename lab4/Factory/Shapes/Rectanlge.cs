@@ -14,8 +14,8 @@ namespace Factory.Shapes
             RightBottom = rightBottom;
         }
 
-        private Point LeftTop { get; }
-        private Point RightBottom { get; }
+        public Point LeftTop { get; }
+        public Point RightBottom { get; }
 
         public override void Draw(ICanvas canvas)
         {

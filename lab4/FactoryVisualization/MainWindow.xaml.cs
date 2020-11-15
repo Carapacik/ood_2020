@@ -16,9 +16,10 @@ namespace FactoryVisualization
         {
             var designer = new Designer(new ShapeFactory());
             var canvas = new Canvas((System.Windows.Controls.Canvas) FindName("MainCanvas"));
-
+            var painter = new Painter();
             var inputDraft = designer.CreateDraft(new StreamReader("../../../input.txt"));
-            Painter.DrawPicture(inputDraft, canvas);
+
+            painter.DrawPicture(inputDraft, canvas);
 
             Console.WriteLine("Enter commands to draw shapes. Use templates:");
             Console.WriteLine("\tregularPolygon <color> <center(X, Y)> <radius> <vertexCount>");
@@ -27,7 +28,7 @@ namespace FactoryVisualization
             Console.WriteLine("\tellipse <color> <center(X, Y)> <horizontalRadius> <verticalRadius>");
 
             var draft = designer.CreateDraft(Console.In);
-            Painter.DrawPicture(draft, canvas);
+            painter.DrawPicture(draft, canvas);
         }
     }
 }

@@ -1,8 +1,8 @@
 namespace Factory
 {
-    public static class Painter
+    public class Painter
     {
-        public static void DrawPicture(PictureDraft draft, ICanvas canvas)
+        public void DrawPicture(PictureDraft draft, ICanvas canvas)
         {
             for (var i = 0; i < draft.ShapeCount; i++)
             {
