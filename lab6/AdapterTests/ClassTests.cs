@@ -8,7 +8,7 @@ namespace AdapterTests
     public class ClassTests
     {
         [Fact]
-        private void LineTo_WithMoveAndSetColor_LineWithColorIsDrawn()
+        private void LineTo_WithMoveAndWithSetColor_LineWithColorIsDrawn()
         {
             const int fromX = 10;
             const int fromY = 15;
@@ -29,7 +29,7 @@ namespace AdapterTests
         }
 
         [Fact]
-        private void LineTo_WithoutMoveAndSetColor_LineWithoutColorIsDrawnFromZero()
+        private void LineTo_WithoutMoveAndWithoutSetColor_LineWithoutColorIsDrawnFromZero()
         {
             const int endX = 10;
             const int endY = 15;
