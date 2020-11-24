@@ -8,7 +8,7 @@ namespace Adapter
 {
     public class ClassAdapter : ModernGraphicsRenderer, ICanvas
     {
-        private readonly RGBAColor _color = new RGBAColor(0, 0, 0, 1);
+        private readonly RgbaColor _color = new RgbaColor(0, 0, 0, 1);
         private Point _point;
 
         public ClassAdapter(TextWriter textWriter) : base(textWriter)

@@ -8,7 +8,7 @@ namespace Adapter
 {
     public static class App
     {
-        public static void PaintPicture(CanvasPainter canvasPainter)
+        private static void PaintPicture(CanvasPainter canvasPainter)
         {
             var triangle = new Triangle(new Point(10, 15), new Point(100, 200), new Point(150, 250), 0xDEDE1F);
             var rectangle = new Rectangle(new Point(30, 40), 18, 24);

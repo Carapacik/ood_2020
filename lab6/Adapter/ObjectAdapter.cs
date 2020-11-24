@@ -7,8 +7,8 @@ namespace Adapter
 {
     public class ObjectAdapter : ICanvas
     {
-        private readonly RGBAColor _color = new RGBAColor(0, 0, 0, 1);
-        public readonly ModernGraphicsRenderer _renderer;
+        private readonly RgbaColor _color = new RgbaColor(0, 0, 0, 1);
+        private readonly ModernGraphicsRenderer _renderer;
         private Point _point;
 
         public ObjectAdapter(ModernGraphicsRenderer renderer)

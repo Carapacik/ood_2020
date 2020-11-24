@@ -53,7 +53,7 @@ namespace AdapterTests
             var sw = new StringWriter();
             var adapter = new ClassAdapter(sw);
 
-            Assert.Throws<Exception>(() => adapter.LineTo(endX, endX));
+            Assert.Throws<Exception>(() => adapter.LineTo(endX, endY));
         }
 
 

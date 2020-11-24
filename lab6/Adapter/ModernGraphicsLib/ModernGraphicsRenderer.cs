@@ -22,7 +22,7 @@ namespace Adapter.ModernGraphicsLib
             _drawing = true;
         }
 
-        public void DrawLine(Point start, Point end, RGBAColor color)
+        public void DrawLine(Point start, Point end, RgbaColor color)
         {
             if (!_drawing)
                 throw new Exception("DrawLine is allowed between BeginDraw()/EndDraw() only");

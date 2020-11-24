@@ -1,8 +1,8 @@
 namespace Adapter.ModernGraphicsLib
 {
-    public class RGBAColor
+    public class RgbaColor
     {
-        public RGBAColor(float r, float g, float b, float a)
+        public RgbaColor(float r, float g, float b, float a)
         {
             R = r;
             G = g;

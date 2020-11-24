@@ -31,7 +31,7 @@ namespace AdapterTests
         }
 
         [Fact]
-        private void LineTo_WithoutMoveAndSetColor_LineWithoutColorIsDrawnFromZero()
+        private void LineTo_WithoutMoveAndetColor_LineWithoutColorIsDrawnFromZero()
         {
             const int endX = 10;
             const int endY = 15;

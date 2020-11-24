@@ -1,6 +1,6 @@
 namespace Adapter.ModernGraphicsLib
 {
-    public struct Point
+    public readonly struct Point
     {
         public readonly int X;
         public readonly int Y;
