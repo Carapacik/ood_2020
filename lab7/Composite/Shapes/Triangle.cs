@@ -11,7 +11,7 @@ namespace Composite.Shapes
             Vertex2 = vertex2;
             Vertex3 = vertex3;
 
-            OutlineStyle = new OutlineStyle(0x00000000, 1);
+            OutlineStyle = new OutlineStyle(0xFF000000, 1);
             FillStyle = new Style();
         }
 

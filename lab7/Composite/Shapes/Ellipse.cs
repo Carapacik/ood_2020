@@ -14,9 +14,9 @@ namespace Composite.Shapes
             FillStyle = new Style();
         }
 
-        private Point Center { get; set; }
-        private double RadiusX { get; set; }
-        private double RadiusY { get; set; }
+        public Point Center { get; private set; }
+        public double RadiusX { get; private set; }
+        public double RadiusY { get; private set; }
 
         public Rect GetFrame()
         {

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -81,7 +80,7 @@ namespace CompositeVisualization
             _canvas.Children.Add(ellipse);
         }
 
-        public void FillPolygon(IEnumerable<Point> points)
+        public void FillPolygon(Point[] points)
         {
             var polygon = new Polygon
             {

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Composite
 {
     public interface ICanvas
@@ -13,6 +11,6 @@ namespace Composite
         void DrawEllipse(Point center, double radiusX, double radiusY);
         void FillEllipse(Point center, double radiusX, double radiusY);
 
-        void FillPolygon(IEnumerable<Point> points);
+        void FillPolygon(Point[] points);
     }
 }
