@@ -122,7 +122,7 @@ namespace DocumentEditor
             else
             {
                 var str = string.Join(" ", args.Skip(1).ToArray());
-                _document.SetTitle(str);
+                _document.Title = str;
             }
         }
     }

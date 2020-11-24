@@ -5,11 +5,9 @@ using System.Linq;
 
 namespace DocumentEditor
 {
-    public class DocumentSaver
+    public static class DocumentSaver
     {
-        private readonly List<IDocumentItem> _documentItems;
-
-        private readonly List<Tuple<string, string>> _symbols = new List<Tuple<string, string>>
+        private static readonly List<Tuple<string, string>> Symbols = new List<Tuple<string, string>>
         {
             new Tuple<string, string>("&", "&amp;"),
             new Tuple<string, string>("<", "&lt;"),
@@ -18,29 +16,24 @@ namespace DocumentEditor
             new Tuple<string, string>("\"", "&quot;")
         };
 
-        public DocumentSaver(List<IDocumentItem> documentItems)
-        {
-            _documentItems = documentItems;
-        }
-
-        public void Save(string path, string title)
+        public static void Save(string path, string title, List<IDocumentItem> documentItems)
         {
             using var sw = new StreamWriter(path);
             sw.WriteLine("<!DOCTYPE html>");
             sw.WriteLine("<html>");
             sw.WriteLine("  <head>");
-            sw.WriteLine($"    <title>{title}</title>");
+            sw.WriteLine($"    <title>{ConvertToHtmlSymbols(title)}</title>");
             sw.WriteLine("  </head>");
             sw.WriteLine("  <body>");
-            sw.Write(CreateBody(path));
+            sw.Write(CreateBody(path, documentItems));
             sw.WriteLine("  </body>");
             sw.WriteLine("</html>");
         }
 
-        private string CreateBody(string path)
+        private static string CreateBody(string path, List<IDocumentItem> documentItems)
         {
             var str = "";
-            foreach (var item in _documentItems)
+            foreach (var item in documentItems)
                 switch (item)
                 {
                     case IImage image:
@@ -51,21 +44,21 @@ namespace DocumentEditor
                             Directory.CreateDirectory(dirName);
 
                         File.Copy(image.Path, newPath, true);
-                        str += $"\t<img src=\"{newPath}\" width=\"{image.Width}\" height=\"{image.Height}\"\n";
+                        str += $"  <img src=\"{newPath}\" width=\"{image.Width}\" height=\"{image.Height}\"/>\r\n";
                         break;
                     }
                     case IParagraph paragraph:
-                        str += $"\t<p>{ConvertHtmlSymbols(paragraph.Text)}</p>\n";
+                        str += $"  <p>{ConvertToHtmlSymbols(paragraph.Text)}</p>\r\n";
                         break;
                 }
 
             return str;
         }
 
-        private string ConvertHtmlSymbols(string str)
+        private static string ConvertToHtmlSymbols(string str)
         {
             if (str != null)
-                str = _symbols.Aggregate(str, (current, symbol) => current.Replace(symbol.Item1, symbol.Item2));
+                str = Symbols.Aggregate(str, (current, symbol) => current.Replace(symbol.Item1, symbol.Item2));
             return str;
         }
     }

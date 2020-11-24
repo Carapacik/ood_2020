@@ -9,18 +9,16 @@ namespace DocumentEditorTests
         [Fact]
         private void ExecuteAndUnExecute_CorrectArguments_TitleRenamedAndRenamedBack()
         {
-            var document = new Document();
-            var prevTitle = document.Title;
-
             const string expectedTitle = "Next Title";
-
-            var command = new SetTitleCommand(document, expectedTitle);
+            var title = new Text();
+            var prevTitle = title.Value;
+            var command = new SetTitleCommand(title, expectedTitle);
 
             command.Execute();
-            Assert.Equal(expectedTitle, document.Title);
+            Assert.Equal(expectedTitle, title.Value);
 
             command.UnExecute();
-            Assert.Equal(prevTitle, document.Title);
+            Assert.Equal(prevTitle, title.Value);
         }
     }
 }

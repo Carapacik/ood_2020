@@ -9,7 +9,7 @@ namespace DocumentEditorTests
         [Fact]
         private void ExecuteAndUnExecute_CorrectArguments_ExpectedSize()
         {
-            const string pathToImage = "../../../1.png";
+            const string pathToImage = "1.png";
             var image = new Image(pathToImage, 300, 300);
 
             var command = new ResizeImageCommand(image, 600, 600);

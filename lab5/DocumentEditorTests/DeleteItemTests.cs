@@ -50,7 +50,7 @@ namespace DocumentEditorTests
         [Fact]
         private void ExecuteAndUnExecute_ListWithImage_ImageDeletedAfterDispose()
         {
-            var image = new Image("../../../1.png", 300, 300);
+            var image = new Image("1.png", 300, 300);
             var items = new List<IDocumentItem> {image};
             using (var command = new DeleteItemCommand(items, 0))
             {

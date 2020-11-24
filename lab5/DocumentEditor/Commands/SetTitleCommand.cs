@@ -2,10 +2,10 @@ namespace DocumentEditor.Commands
 {
     public class SetTitleCommand : AbstractCommand
     {
-        private readonly IDocument _document;
+        private readonly Text _document;
         private string _title;
 
-        public SetTitleCommand(IDocument document, string title)
+        public SetTitleCommand(Text document, string title)
         {
             _document = document;
             _title = title;
@@ -13,8 +13,8 @@ namespace DocumentEditor.Commands
 
         private void SwapValues()
         {
-            var temp = _document.Title;
-            _document.Title = _title;
+            var temp = _document.Value;
+            _document.Value = _title;
             _title = temp;
         }
 

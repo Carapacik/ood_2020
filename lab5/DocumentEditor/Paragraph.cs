@@ -1,5 +1,3 @@
-using System;
-
 namespace DocumentEditor
 {
     public class Paragraph : IParagraph
@@ -8,7 +6,6 @@ namespace DocumentEditor
 
         public void Delete()
         {
-            throw new NotImplementedException();
         }
 
         public override string ToString()

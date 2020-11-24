@@ -8,12 +8,13 @@ namespace DocumentEditor
     {
         private readonly List<IDocumentItem> _documentItems = new List<IDocumentItem>();
         private readonly History _history = new History();
+        private readonly Text _title = new Text {Value = "No title"};
         public int ItemsCount => _documentItems.Count;
-        public string Title { get; set; } = "No title";
 
-        public void SetTitle(string title)
+        public string Title
         {
-            _history.AddAndExecuteCommand(new SetTitleCommand(this, title));
+            get => _title.Value;
+            set => _history.AddAndExecuteCommand(new SetTitleCommand(_title, value));
         }
 
         public IParagraph InsertParagraph(string text, int position = -1)
@@ -74,8 +75,7 @@ namespace DocumentEditor
 
         public void Save(string path)
         {
-            var saver = new DocumentSaver(_documentItems);
-            saver.Save(path, Title);
+            DocumentSaver.Save(path, Title, _documentItems);
         }
     }
 }
