@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GumBallMachine", "GumBallMachine\GumBallMachine.csproj", "{AF7F77C3-FCC4-4700-8D7D-73A60E732922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GumBallMachineTests", "GumBallMachineTests\GumBallMachineTests.csproj", "{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF7F77C3-FCC4-4700-8D7D-73A60E732922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7F77C3-FCC4-4700-8D7D-73A60E732922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7F77C3-FCC4-4700-8D7D-73A60E732922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7F77C3-FCC4-4700-8D7D-73A60E732922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
