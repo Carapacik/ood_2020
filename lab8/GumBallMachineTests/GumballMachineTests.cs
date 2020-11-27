@@ -28,7 +28,7 @@ namespace GumBallMachineTests
         {
             var m = new GumBallMachine.GumBallMachine(4);
             m.ReleaseBall();
-            Assert.Equal((uint) 3, m.GetBallCount());
+            Assert.Equal((uint) 3, m.BallCount);
         }
 
         [Fact]
@@ -36,14 +36,14 @@ namespace GumBallMachineTests
         {
             var m = new GumBallMachine.GumBallMachine(0);
             m.ReleaseBall();
-            Assert.Equal((uint) 0, m.GetBallCount());
+            Assert.Equal((uint) 0, m.BallCount);
         }
 
         [Fact]
-        public void GetBallCount_FewBalls_ShouldReturnBallCount()
+        public void BallCountGet_FewBalls_ShouldReturnBallCount()
         {
             var m = new GumBallMachine.GumBallMachine(5);
-            Assert.Equal((uint) 5, m.GetBallCount());
+            Assert.Equal((uint) 5, m.BallCount);
         }
 
         [Fact]
@@ -83,7 +83,7 @@ namespace GumBallMachineTests
         {
             var m = new GumBallMachine.GumBallMachine(0);
             m.InsertQuarter();
-            Assert.Equal((uint) 0, m.GetBallCount());
+            Assert.Equal((uint) 0, m.BallCount);
             Assert.Equal(GetGumBallMachineString(0, "sold out"), m.ToString());
         }
 
@@ -92,7 +92,7 @@ namespace GumBallMachineTests
         {
             var m = new GumBallMachine.GumBallMachine(5);
             m.InsertQuarter();
-            Assert.Equal((uint) 5, m.GetBallCount());
+            Assert.Equal((uint) 5, m.BallCount);
             Assert.Equal(GetGumBallMachineString(5, "waiting for turn of crank"), m.ToString());
         }
 
@@ -102,7 +102,7 @@ namespace GumBallMachineTests
             var m = new GumBallMachine.GumBallMachine(5);
             m.InsertQuarter();
             m.InsertQuarter();
-            Assert.Equal((uint) 5, m.GetBallCount());
+            Assert.Equal((uint) 5, m.BallCount);
             Assert.Equal(GetGumBallMachineString(5, "waiting for turn of crank"), m.ToString());
         }
 
@@ -111,7 +111,7 @@ namespace GumBallMachineTests
         {
             var m = new GumBallMachine.GumBallMachine(0);
             m.TurnCrank();
-            Assert.Equal((uint) 0, m.GetBallCount());
+            Assert.Equal((uint) 0, m.BallCount);
             Assert.Equal(GetGumBallMachineString(0, "sold out"), m.ToString());
         }
 
@@ -120,7 +120,7 @@ namespace GumBallMachineTests
         {
             var m = new GumBallMachine.GumBallMachine(5);
             m.TurnCrank();
-            Assert.Equal((uint) 5, m.GetBallCount());
+            Assert.Equal((uint) 5, m.BallCount);
             Assert.Equal(GetGumBallMachineString(5, "waiting for quarter"), m.ToString());
         }
 
@@ -130,7 +130,7 @@ namespace GumBallMachineTests
             var m = new GumBallMachine.GumBallMachine(1);
             m.InsertQuarter();
             m.TurnCrank();
-            Assert.Equal((uint) 0, m.GetBallCount());
+            Assert.Equal((uint) 0, m.BallCount);
             Assert.Equal(GetGumBallMachineString(0, "sold out"), m.ToString());
         }
 
@@ -140,7 +140,7 @@ namespace GumBallMachineTests
             var m = new GumBallMachine.GumBallMachine(2);
             m.InsertQuarter();
             m.TurnCrank();
-            Assert.Equal((uint) 1, m.GetBallCount());
+            Assert.Equal((uint) 1, m.BallCount);
             Assert.Equal(GetGumBallMachineString(1, "waiting for quarter"), m.ToString());
         }
 
@@ -149,7 +149,7 @@ namespace GumBallMachineTests
         {
             var m = new GumBallMachine.GumBallMachine(0);
             m.EjectQuarter();
-            Assert.Equal((uint) 0, m.GetBallCount());
+            Assert.Equal((uint) 0, m.BallCount);
             Assert.Equal(GetGumBallMachineString(0, "sold out"), m.ToString());
         }
 
@@ -158,7 +158,7 @@ namespace GumBallMachineTests
         {
             var m = new GumBallMachine.GumBallMachine(5);
             m.EjectQuarter();
-            Assert.Equal((uint) 5, m.GetBallCount());
+            Assert.Equal((uint) 5, m.BallCount);
             Assert.Equal(GetGumBallMachineString(5, "waiting for quarter"), m.ToString());
         }
 
@@ -168,7 +168,7 @@ namespace GumBallMachineTests
             var m = new GumBallMachine.GumBallMachine(1);
             m.InsertQuarter();
             m.EjectQuarter();
-            Assert.Equal((uint) 1, m.GetBallCount());
+            Assert.Equal((uint) 1, m.BallCount);
             Assert.Equal(GetGumBallMachineString(1, "waiting for quarter"), m.ToString());
         }
     }

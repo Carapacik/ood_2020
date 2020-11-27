@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GumBallMachine", "GumBallMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GumBallMachineTests", "GumBallMachineTests\GumBallMachineTests.csproj", "{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiGumBallMachine", "MultiGumBallMachine\MultiGumBallMachine.csproj", "{FA5B7A18-6790-446E-A60C-E8EE4D23CEE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiGumBallMachineTests", "MultiGumBallMachineTests\MultiGumBallMachineTests.csproj", "{4E2D83F8-7280-4F5B-8F18-5B1743286530}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70B9D70F-4BA4-47C3-A90D-5FCE4CDE7A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA5B7A18-6790-446E-A60C-E8EE4D23CEE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA5B7A18-6790-446E-A60C-E8EE4D23CEE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA5B7A18-6790-446E-A60C-E8EE4D23CEE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5B7A18-6790-446E-A60C-E8EE4D23CEE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2D83F8-7280-4F5B-8F18-5B1743286530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2D83F8-7280-4F5B-8F18-5B1743286530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2D83F8-7280-4F5B-8F18-5B1743286530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2D83F8-7280-4F5B-8F18-5B1743286530}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

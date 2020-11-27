@@ -1,12 +1,9 @@
 namespace GumBallMachine
 {
-    public interface IGumBallMachine
+    public interface IGumBallMachine : IGumBallMachineStd
     {
-        void InsertQuarter();
-        void TurnCrank();
-        void EjectQuarter();
+        uint BallCount { get; }
         void ReleaseBall();
-        uint GetBallCount();
         void SetSoldState();
         void SetSoldOutState();
         void SetHasQuarterState();

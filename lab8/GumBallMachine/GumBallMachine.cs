@@ -8,47 +8,26 @@ namespace GumBallMachine
         private readonly NoQuarterState _noQuarterState;
         private readonly SoldOutState _soldOutState;
         private readonly SoldState _soldState;
-        private uint _count;
         private IState _state;
 
-        public GumBallMachine(uint numBalls)
+        public GumBallMachine(uint ballCount)
         {
             _soldState = new SoldState(this);
             _soldOutState = new SoldOutState(this);
             _noQuarterState = new NoQuarterState(this);
             _hasQuarterState = new HasQuarterState(this);
-            _count = numBalls;
-            _state = _count > 0 ? _noQuarterState : (IState) _soldOutState;
+            BallCount = ballCount;
+            _state = BallCount > 0 ? _noQuarterState : (IState) _soldOutState;
         }
 
-        public void EjectQuarter()
-        {
-            _state.EjectQuarter();
-        }
+        public uint BallCount { get; private set; }
 
-        public void InsertQuarter()
-        {
-            _state.InsertQuarter();
-        }
-
-        public void TurnCrank()
-        {
-            _state.TurnCrank();
-            _state.Dispense();
-        }
-
-        public uint GetBallCount()
-        {
-            return _count;
-        }
 
         public void ReleaseBall()
         {
-            if (_count != 0)
-            {
-                Console.WriteLine("A gumball comes rolling out the slot...");
-                --_count;
-            }
+            if (BallCount == 0) return;
+            Console.WriteLine("A gumball comes rolling out the slot...");
+            --BallCount;
         }
 
         public void SetHasQuarterState()
@@ -71,11 +50,26 @@ namespace GumBallMachine
             _state = _soldState;
         }
 
+        public void EjectQuarter()
+        {
+            _state.EjectQuarter();
+        }
+
+        public void InsertQuarter()
+        {
+            _state.InsertQuarter();
+        }
+
+        public void TurnCrank()
+        {
+            _state.TurnCrank();
+            _state.Dispense();
+        }
+
         public override string ToString()
         {
             return
-                $"Gumball Machine \r\nInventory: {_count} gumball{(_count != 1 ? "s" : "")}\r\nMachine is {_state}\r\n";
-            ;
+                $"Gumball Machine \r\nInventory: {BallCount} gumball{(BallCount != 1 ? "s" : "")}\r\nMachine is {_state}\r\n";
         }
     }
 }

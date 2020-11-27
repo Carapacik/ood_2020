@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 
-namespace GumBallMachine
+namespace MultiGumBallMachine.StateGumBallMachine
 {
     public class SoldState : IState
     {
@@ -18,6 +18,10 @@ namespace GumBallMachine
             {
                 Console.WriteLine("Oops, out of gumballs");
                 _gumBallMachine.SetSoldOutState();
+            }
+            else if (_gumBallMachine.QuarterCount > 0)
+            {
+                _gumBallMachine.SetHasQuarterState();
             }
             else
             {
@@ -38,6 +42,11 @@ namespace GumBallMachine
         public void TurnCrank()
         {
             Console.WriteLine("Turning twice doesn't get you another gumball");
+        }
+
+        public void Refill(uint ballCount)
+        {
+            Console.WriteLine("Can't refill gumballs when machine is giving you a gumball");
         }
 
         public override string ToString()
