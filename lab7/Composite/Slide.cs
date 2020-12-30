@@ -25,8 +25,7 @@ namespace Composite
             canvas.DrawLine(points[2], points[3]);
             canvas.DrawLine(points[3], points[0]);
 
-            foreach (var shape in Shapes)
-                shape.Draw(canvas);
+            for (var i = 0; i < ShapesCount; i++) GetShapeByIndex(i).Draw(canvas);
         }
     }
 }

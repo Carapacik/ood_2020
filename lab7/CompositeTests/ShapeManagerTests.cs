@@ -18,7 +18,7 @@ namespace CompositeTests
             shapeManager.InsertShape(rectangle);
             shapeManager.InsertShape(triangle);
 
-            Assert.Equal(3, shapeManager.Shapes.Count);
+            Assert.Equal(3, shapeManager.ShapesCount);
             Assert.Same(triangle, shapeManager.GetShapeByIndex(0));
             Assert.Same(rectangle, shapeManager.GetShapeByIndex(1));
             Assert.Same(ellipse, shapeManager.GetShapeByIndex(2));
@@ -36,7 +36,7 @@ namespace CompositeTests
             shapeManager.InsertShape(rectangle, 1);
             shapeManager.InsertShape(triangle, 2);
 
-            Assert.Equal(3, shapeManager.Shapes.Count);
+            Assert.Equal(3, shapeManager.ShapesCount);
             Assert.Same(ellipse, shapeManager.GetShapeByIndex(0));
             Assert.Same(rectangle, shapeManager.GetShapeByIndex(1));
             Assert.Same(triangle, shapeManager.GetShapeByIndex(2));
@@ -56,7 +56,7 @@ namespace CompositeTests
             shapeManager.RemoveShapeAtIndex(0);
             shapeManager.RemoveShapeAtIndex(1);
 
-            Assert.Single(shapeManager.Shapes);
+            Assert.Equal(1, shapeManager.ShapesCount);
             Assert.Equal(rectangle, shapeManager.GetShapeByIndex(0));
         }
     }

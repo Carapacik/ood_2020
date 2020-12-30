@@ -20,7 +20,7 @@ namespace Composite.Shapes
 
         public Rect GetFrame()
         {
-            return new Rect(new Point(Center.X - RadiusX, Center.Y - RadiusY), 2 * RadiusX, 2 * RadiusY);
+            return new(new Point(Center.X - RadiusX, Center.Y - RadiusY), 2 * RadiusX, 2 * RadiusY);
         }
 
         public void SetFrame(Rect frame)

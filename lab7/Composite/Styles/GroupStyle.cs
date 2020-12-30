@@ -20,7 +20,8 @@
         {
             get
             {
-                if (!(_styleEnumerator is IStyleEnumerator<IOutlineStyle> outLineEnumerator))
+                if (!(_styleEnumerator is IStyleEnumerator<IOutlineStyle> outLineEnumerator) ||
+                    outLineEnumerator.StyleList.Count == 0)
                     return null;
 
                 var firstVal = outLineEnumerator.StyleList[0].Thickness;

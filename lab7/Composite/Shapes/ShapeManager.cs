@@ -4,22 +4,22 @@ namespace Composite.Shapes
 {
     public class ShapeManager
     {
-        public readonly List<IShape> Shapes = new List<IShape>();
-        protected int ShapesCount => Shapes.Count;
+        private readonly List<IShape> _shapes = new();
+        public int ShapesCount => _shapes.Count;
 
         public void InsertShape(IShape shape, int position = 0)
         {
-            Shapes.Insert(position, shape);
+            _shapes.Insert(position, shape);
         }
 
         public IShape GetShapeByIndex(int index)
         {
-            return Shapes[index];
+            return _shapes[index];
         }
 
         public void RemoveShapeAtIndex(int index)
         {
-            Shapes.RemoveAt(index);
+            _shapes.RemoveAt(index);
         }
     }
 }

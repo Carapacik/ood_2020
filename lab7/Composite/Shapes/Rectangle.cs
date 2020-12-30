@@ -16,13 +16,13 @@ namespace Composite.Shapes
             FillStyle = new Style();
         }
 
-        private Point LeftTop { get; set; }
-        private double Width { get; set; }
-        private double Height { get; set; }
+        public Point LeftTop { get; set; }
+        public double Width { get; set; }
+        public double Height { get; set; }
 
         public Rect GetFrame()
         {
-            return new Rect(LeftTop, Width, Height);
+            return new(LeftTop, Width, Height);
         }
 
         public void SetFrame(Rect frame)

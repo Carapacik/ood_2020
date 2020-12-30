@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -80,7 +81,7 @@ namespace CompositeVisualization
             _canvas.Children.Add(ellipse);
         }
 
-        public void FillPolygon(Point[] points)
+        public void FillPolygon(IEnumerable<Point> points)
         {
             var polygon = new Polygon
             {
@@ -92,7 +93,7 @@ namespace CompositeVisualization
 
         private static System.Windows.Point ToPoint(Point point)
         {
-            return new System.Windows.Point(point.X, point.Y);
+            return new(point.X, point.Y);
         }
 
         private static SolidColorBrush ChooseColor(uint color)

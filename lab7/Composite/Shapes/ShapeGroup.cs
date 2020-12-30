@@ -18,7 +18,13 @@ namespace Composite.Shapes
 
         public Rect GetFrame()
         {
-            var notNullShapes = Shapes.Where(x => x.GetFrame() != null).ToList();
+            List<IShape> notNullShapes = new();
+            for (var i = 0; i < ShapesCount; i++)
+            {
+                var shapeElement = GetShapeByIndex(i);
+                if (shapeElement.GetFrame() != null) notNullShapes.Add(shapeElement);
+            }
+
             if (notNullShapes.Count == 0)
                 return null;
 
@@ -36,8 +42,10 @@ namespace Composite.Shapes
         public void SetFrame(Rect frame)
         {
             var prevFrame = GetFrame();
-            foreach (var shape in Shapes.Where(shape => shape.GetFrame() != null))
+            for (var i = 0; i < ShapesCount; i++)
             {
+                var shape = GetShapeByIndex(i);
+                if (GetFrame() == null) continue;
                 var relativeLeftTop = new Point((shape.GetFrame().LeftTop.X - prevFrame.LeftTop.X) / prevFrame.Width,
                     (shape.GetFrame().LeftTop.Y - prevFrame.LeftTop.Y) / prevFrame.Height);
 
@@ -78,7 +86,7 @@ namespace Composite.Shapes
 
         public void Draw(ICanvas canvas)
         {
-            foreach (var shape in Shapes) shape.Draw(canvas);
+            for (var i = 0; i < ShapesCount; i++) GetShapeByIndex(i).Draw(canvas);
         }
 
         private class FillStyleEnumerator : IStyleEnumerator<IStyle>
@@ -90,7 +98,17 @@ namespace Composite.Shapes
                 _shapeManager = shapeManager;
             }
 
-            public IList<IStyle> StyleList => _shapeManager.Shapes.Select(style => style.FillStyle).ToList();
+            public IList<IStyle> StyleList
+            {
+                get
+                {
+                    List<IStyle> styleList = new();
+                    for (var i = 0; i < _shapeManager.ShapesCount; i++)
+                        styleList.Add(_shapeManager.GetShapeByIndex(i).FillStyle);
+
+                    return styleList;
+                }
+            }
         }
 
         private class OutlineStyleEnumerator : IStyleEnumerator<IOutlineStyle>
@@ -102,7 +120,17 @@ namespace Composite.Shapes
                 _shapeManager = shapeManager;
             }
 
-            public IList<IOutlineStyle> StyleList => _shapeManager.Shapes.Select(style => style.OutlineStyle).ToList();
+            public IList<IOutlineStyle> StyleList
+            {
+                get
+                {
+                    List<IOutlineStyle> styleList = new();
+                    for (var i = 0; i < _shapeManager.ShapesCount; i++)
+                        styleList.Add(_shapeManager.GetShapeByIndex(i).OutlineStyle);
+
+                    return styleList;
+                }
+            }
         }
     }
 }

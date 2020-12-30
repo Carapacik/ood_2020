@@ -15,9 +15,9 @@ namespace Composite.Shapes
             FillStyle = new Style();
         }
 
-        private Point Vertex1 { get; set; }
-        private Point Vertex2 { get; set; }
-        private Point Vertex3 { get; set; }
+        public Point Vertex1 { get; set; }
+        public Point Vertex2 { get; set; }
+        public Point Vertex3 { get; set; }
 
         public IOutlineStyle OutlineStyle { get; }
         public IStyle FillStyle { get; }

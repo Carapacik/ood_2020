@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using Composite;
 
@@ -32,7 +33,7 @@ namespace CompositeTests
             _textWriter.WriteLine($"DrawLine from {from} to {to}");
         }
 
-        public void FillPolygon(Point[] points)
+        public void FillPolygon(IEnumerable<Point> points)
         {
             _textWriter.WriteLine("FillPolygon:");
             foreach (var p in points) _textWriter.WriteLine(p);
